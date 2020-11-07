@@ -1,0 +1,18 @@
+class Dog:
+    
+    animal = "dog"
+    
+    def __init__(self):
+        self.breed = "pug"
+    
+    def color(self):
+        self.color = "brown"
+        
+    def getcolor(self):
+        return self.color
+        
+c1 = Dog()
+print(c1.breed)
+print(c1.color)
+print(c1.getcolor())
+# same as examp4 but in this we didnt give arguments in constructor, it gives only output for c1.breed only, it give itaretor for c1.color and c1.getcolor()
