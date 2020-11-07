@@ -1,0 +1,83 @@
+# the below assignment not possible, if u give arguments in __init__ you have to mention like self.name=name but not like self.name="durga" 
+"""
+class Car:
+    
+    wheels = 4
+    
+    def __init__(self, name, engine, color):
+        self.name = "BMW"
+        self.engine = "4 STROKE"
+        self.color = "WHITE"
+        
+c1 = Car(name, engine, color)
+print(c1.name)
+
+"""
+# if u run the below code, it gives output but evrey successive loop the variable value changes like if u give name is bmw in first iteration and maruthi in second iteration, it prints name as maruthi, not as Bmw and maruthi. becz new value updated every time in variable
+"""
+class Car:
+    
+    wheels = 4
+    
+    def __init__(self):
+        for i in range(2):
+            self.name = input("enter car name:")
+            self.engine = input("enter car engine:")
+            self.color = input("enter car color:")
+        
+c1 = Car()
+print(c1.name)
+
+"""
+class Car:
+    # static or class variable, means class variables are variables whose value is assigned in the class.
+    wheels = 4
+    
+    def __init__(self, name, engine, color):
+        
+        # the below instance variables, means assigned inside constructor
+        self.name = name
+        self.engine = engine
+        self.color = color
+        
+
+c1 = Car("BMW", "4 STROKE", "WHITE")
+c2 = Car("MARUTHI", "2 STROKE", "RED")
+print(c1.name, c1.wheels)
+print(c2.name, c2.wheels)
+# o/p bmw 4
+#     bmw 4
+
+Car.wheels = 5
+
+print(c1.name, Car.wheels)
+print(c2.name, Car.wheels)
+# o/p bmw 5
+#     bmw 5
+
+Car.wheels = 5 # class namespace
+
+print(c1.name, c1.wheels)
+print(c2.name, c2.wheels)
+
+# o/p bmw 5
+#     maruthi 5
+
+c1.wheels = 5
+c2.wheels = 6
+
+print(c1.name, Car.wheels)
+print(c2.name, Car.wheels)
+# o/p bmw 5
+#     maruthi 5 becz above car.wheels = 5
+
+c1.wheels = 5
+c2.wheels = 6
+
+print(c1.name, c1.wheels)
+print(c2.name, c2.wheels)
+# o/p bmw 5
+#     maruthi 6
+
+# namespace is an area where you create and store an object, types are class name space and object namespace, in above car.wheels = 6 is example class name space means it changes all data
+
